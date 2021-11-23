@@ -8,33 +8,58 @@ void main() {
       home: Scaffold(
         backgroundColor: Colors.orange ,
         appBar: AppBar(
-          title: Text('I am Rich!'),
-          backgroundColor: Colors.blueGrey[900],
+          backgroundColor: Colors.transparent,
+          elevation: 0,
+          leading: GestureDetector(
+            onTap: () { /* Write listener code here */ },
+            child: Icon(
+              Icons.menu,  // add custom icons also
+              size: 45.0,
+            ),
+          ),
         ),
         
-        body: Container(
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
-            NumberSlideAnimation(
-            number: "1000000",
-            duration: const Duration(seconds: 2),
-            curve: Curves.bounceIn,
-            textStyle: TextStyle(
-              fontSize: 40.0,
-              fontWeight: FontWeight.bold,
-              fontStyle: FontStyle.italic,
-              color: Colors.white ,
+        body: Center(
+          child: Container(
+          child: //Column(
+            //mainAxisAlignment: MainAxisAlignment.center, //Center Column contents vertically
+            //crossAxisAlignment: CrossAxisAlignment.center, //Center Column contents horizontally
+            //children: [
+            //Text('Bitcoin remaining to be mined:',
+            //style: TextStyle(
+            //  fontSize: 30.0,
+            //  fontWeight: FontWeight.bold,
+            //  fontStyle: FontStyle.italic,
+            //  color: Colors.white ,
+            //  ),
+            //),
+            Row(
+            mainAxisAlignment: MainAxisAlignment.center, 
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              NumberSlideAnimation(
+              number: "1000000",
+              duration: const Duration(seconds: 2),
+              curve: Curves.bounceIn,
+              textStyle: TextStyle(
+                fontSize: 50.0,
+                fontWeight: FontWeight.bold,
+                fontStyle: FontStyle.italic,
+                color: Colors.white ,
+                ),
               ),
-            ),
-            Image(
-            image: AssetImage('images/Bitcoin-Logo.png'),
-            width: 150,
-            height: 150
+              Image(
+              image: AssetImage('images/Bitcoin-Logo.png'),
+              width: 60,
+              height: 60
             )
             ],
-        ),
+          ),
+          //],
+          //),
         ),
       ),
-      ),
+    ),
+    ),
   );
 }
